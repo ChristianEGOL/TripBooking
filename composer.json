@@ -1,10 +1,14 @@
 {
     "name": "egol/reisen-lizenz-tool-payment",
+    "description": "Implements the payment functionality.",
+    "version": "0.0.1",
     "authors": [
         {
             "name": "Christian Timm",
             "email": "christian@egol.de"
         }
     ],
-    "require": {}
+    "require": {
+        "egol/reisen-lizenz-tool-payment": "dev-master"
+    }
 }
