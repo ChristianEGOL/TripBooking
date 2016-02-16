@@ -1,0 +1,10 @@
+{
+    "name": "EGOL/TripBooking",
+    "authors": [
+        {
+            "name": "Christian Timm",
+            "email": "christian@egol.de"
+        }
+    ],
+    "require": {}
+}
