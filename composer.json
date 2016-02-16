@@ -7,8 +7,5 @@
             "name": "Christian Timm",
             "email": "christian@egol.de"
         }
-    ],
-    "require": {
-        "egol/reisen-lizenz-tool-payment": "dev-master"
-    }
+    ]
 }
