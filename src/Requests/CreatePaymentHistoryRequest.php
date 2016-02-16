@@ -1,6 +1,6 @@
 <?php
 
-namespace EGOL\TripBooking\Requests;
+namespace EGOL\ReisenLizenzPayment\Requests;
 
 use App\Http\Requests\Request;
 

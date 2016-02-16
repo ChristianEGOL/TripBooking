@@ -1,6 +1,6 @@
 <?php
 
-namespace EGOL\TripBooking;
+namespace EGOL\ReisenLizenzPayment;
 
 use Illuminate\Database\Eloquent\Model;
 

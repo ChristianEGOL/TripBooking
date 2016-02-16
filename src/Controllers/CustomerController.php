@@ -1,7 +1,7 @@
 <?php
 
 
-namespace EGOL\TripBooking\Controllers;
+namespace EGOL\ReisenLizenzPayment\Controllers;
 
 use App\CustomerBooking;
 use App\Http\Controllers\Controller;

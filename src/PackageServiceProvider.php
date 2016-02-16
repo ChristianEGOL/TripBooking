@@ -1,6 +1,6 @@
 <?php
 
-namespace EGOL\TripBooking;
+namespace EGOL\ReisenLizenzPayment;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -21,6 +21,10 @@ class PackageServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/database/migrations/' => database_path('migrations')
+        ], 'migrations');
+
+        $this->publishes([
+            __DIR__.'/Requests/' => app_path('Http/Requests')
         ], 'migrations');
 
         $this->publishes([

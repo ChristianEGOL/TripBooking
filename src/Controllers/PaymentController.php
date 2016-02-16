@@ -1,8 +1,8 @@
 <?php
 
-namespace EGOL\TripBooking\Controllers;
+namespace EGOL\ReisenLizenzPayment\Controllers;
 
-use EGOL\TripBooking\Booking;
+use EGOL\ReisenLizenzPayment\Booking;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

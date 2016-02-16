@@ -1,10 +1,10 @@
 <?php
 
-namespace EGOL\TripBooking\Controllers;
+namespace EGOL\ReisenLizenzPayment\Controllers;
 
 use Carbon\Carbon;
-use EGOL\TripBooking\PaymentReminder;
-use EGOL\TripBooking\Requests\CreatePaymentReminderRequest;
+use EGOL\ReisenLizenzPayment\PaymentReminder;
+use EGOL\ReisenLizenzPayment\Requests\CreatePaymentReminderRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 
 /**
  * Class PaymentReminderController
- * @package EGOL\TripBooking\Controllers
+ * @package EGOL\ReisenLizenzPayment\Controllers
  */
 class PaymentReminderController extends Controller
 {

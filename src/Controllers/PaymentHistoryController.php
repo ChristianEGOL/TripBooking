@@ -1,11 +1,11 @@
 <?php
 
-namespace EGOL\TripBooking\Controllers;
+namespace EGOL\ReisenLizenzPayment\Controllers;
 
 use App\Customer;
 use App\CustomerBooking;
-use EGOL\TripBooking\PaymentHistory;
-use EGOL\TripBooking\Requests\CreatePaymentHistoryRequest;
+use EGOL\ReisenLizenzPayment\PaymentHistory;
+use EGOL\ReisenLizenzPayment\Requests\CreatePaymentHistoryRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 
 /**
  * Class PaymentHistoryController
- * @package EGOL\TripBooking\Controllers
+ * @package EGOL\ReisenLizenzPayment\Controllers
  */
 class PaymentHistoryController extends Controller
 {
