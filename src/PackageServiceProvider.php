@@ -24,10 +24,6 @@ class PackageServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__.'/Requests/' => app_path('Http/Requests')
-        ], 'migrations');
-
-        $this->publishes([
             __DIR__.'/views' => base_path('resources/views'),
         ]);
     }

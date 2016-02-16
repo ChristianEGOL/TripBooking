@@ -3,6 +3,7 @@
 namespace EGOL\ReisenLizenzPayment\Controllers;
 
 use Carbon\Carbon;
+use EGOL\ReisenLizenzPayment\Jobs\PaymentReminderJob;
 use EGOL\ReisenLizenzPayment\PaymentReminder;
 use EGOL\ReisenLizenzPayment\Requests\CreatePaymentReminderRequest;
 use Illuminate\Http\Request;
@@ -37,7 +38,7 @@ class PaymentReminderController extends Controller
     }
 
     /**
-     * @param Requests\CreatePaymentReminderRequest $request
+     * @param CreatePaymentReminderRequest $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -47,6 +48,7 @@ class PaymentReminderController extends Controller
 
         $reminder = PaymentReminder::create([
             'booking_id' => $id,
+            'email' => $request->get('email'),
             'title' => $request->get('title'),
             'message' => $request->get('message'),
             'send_at' => $send_at
@@ -64,6 +66,11 @@ class PaymentReminderController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function cronjob(Request $request)
+    {
+        $this->dispatch(new PaymentReminderJob());
     }
 
     /**

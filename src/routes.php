@@ -1,5 +1,13 @@
 <?php
 
+Route::get('test', function() {
+    return view('booking::emails.reminder')
+        ->with('title', 'Test')
+        ->with('lead', 'Test');
+});
+
+Route::get('/cron/reminder', '\EGOL\ReisenLizenzPayment\Controllers\PaymentReminderController@cronjob');
+
 Route::group(['prefix' => '/payment', 'middleware' => 'auth'], function() {
 
     Route::patch('{id}/transform', '\EGOL\ReisenLizenzPayment\Controllers\PaymentController@transform');

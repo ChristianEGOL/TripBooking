@@ -19,6 +19,7 @@ class CreatePaymentRemindersTable extends Migration
             $table->text('message');
             $table->integer('booking_id');
             $table->timestamp('send_at');
+            $table->timestamp('shipment_at');
             $table->timestamps();
         });
     }
