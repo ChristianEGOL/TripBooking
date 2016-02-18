@@ -43,7 +43,7 @@
                                 </label>
                                 <textarea v-model="reminder.message" class="form-control" cols="30" rows="10"></textarea>
                             </div>
-                            <button class="btn btn-primary" @click="postReminder(booking)">Neue Erinnerung</button>
+                            <button class="btn btn-primary" @click="postReminder()">Neue Erinnerung</button>
                         </div>
                     </div>
                 </form>
@@ -57,15 +57,17 @@
                         <td>
                             <span v-if="shipment(reminder)" class="label label-success ">Versendet</span>
                             <p class="text-lowercase">@{{ reminder.email }}
-                            <br>
-                            <small>@{{ reminder.send_at | de_date }}</small>
+                                <br>
+                                <small>@{{ reminder.send_at | de_date }}</small>
                             </p>
                             <p><strong>@{{ reminder.title }}</strong></p>
                             <p>
                                 @{{ reminder.message }}
                             </p>
                         </td>
-                        <td><i @click="removeReminder(reminder)" class="fa fa-remove text-danger pull-right"></i></td>
+                        <td>
+                            <i @click="removeReminder(reminder)" class="fa fa-remove text-danger pull-right"></i>
+                        </td>
                     </tr>
                 </table>
                 <hr>
