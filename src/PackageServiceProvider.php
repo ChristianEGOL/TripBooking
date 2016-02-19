@@ -3,6 +3,8 @@
 namespace EGOL\ReisenLizenzPayment;
 
 use Illuminate\Support\ServiceProvider;
+use App\Booking;
+use EGOL\ReisenLizenzPayment\PaymentDefaultTodo;
 
 class PackageServiceProvider extends ServiceProvider
 {
@@ -13,6 +15,7 @@ class PackageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         if (! $this->app->routesAreCached()) {
             require __DIR__.'/routes.php';
         }

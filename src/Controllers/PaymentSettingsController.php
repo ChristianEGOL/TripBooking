@@ -2,29 +2,22 @@
 
 namespace EGOL\ReisenLizenzPayment\Controllers;
 
-use Carbon\Carbon;
-use EGOL\ReisenLizenzPayment\Jobs\PaymentReminderJob;
-use EGOL\ReisenLizenzPayment\PaymentReminder;
-use EGOL\ReisenLizenzPayment\Requests\CreatePaymentReminderRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-/**
- * Class PaymentReminderController
- * @package EGOL\ReisenLizenzPayment\Controllers
- */
-class PaymentReminderController extends Controller
+class PaymentSettingsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
+        return view('booking::payment.settings');
     }
 
     /**
@@ -38,23 +31,14 @@ class PaymentReminderController extends Controller
     }
 
     /**
-     * @param CreatePaymentReminderRequest $request
-     * @param $id
-     * @return \Illuminate\Http\JsonResponse
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store(CreatePaymentReminderRequest $request, $id)
+    public function store(Request $request)
     {
-        $send_at = Carbon::createFromFormat('d.m.Y', $request->get('send_at'));
-
-        $reminder = PaymentReminder::create([
-            'booking_id' => $id,
-            'email' => $request->get('email'),
-            'title' => $request->get('title'),
-            'message' => $request->get('message'),
-            'send_at' => $send_at,
-        ]);
-
-        return response()->json(['status' => 'ok', 'booking' => $reminder]);
+        //
     }
 
     /**
@@ -66,11 +50,6 @@ class PaymentReminderController extends Controller
     public function show($id)
     {
         //
-    }
-
-    public function cronjob(Request $request)
-    {
-        $this->dispatch(new PaymentReminderJob());
     }
 
     /**
@@ -93,8 +72,7 @@ class PaymentReminderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo $id;
-        return response()->json(['status' => 'ok']);
+        //
     }
 
     /**
@@ -103,8 +81,8 @@ class PaymentReminderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, $reminder)
+    public function destroy($id)
     {
-        PaymentReminder::find($reminder)->delete();
+        //
     }
 }

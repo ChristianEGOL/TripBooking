@@ -23,14 +23,18 @@ class PaymentController extends Controller
     {
         $showError = 0;
 
-        if($request->old('error')) {
+        if ($request->old('error')) {
             $showError = 1;
         }
 
-        $bookings = Booking::with('customer_booking.price', 'tripdate', 'payment')->orderBy('id', 'desc')->get();
+        $bookings = Booking::with('customer_booking.price', 'tripdate', 'payment')
+            ->orderBy('id', 'desc')
+            ->get();
 
         $open = $this->dispatch(new BookingOpenJob($bookings));
+
         $done = $this->dispatch(new BookingPayedJob($bookings));
+
         $unpayed = $this->dispatch(new BookingUnpayedJob($bookings));
 
         return view('booking::payment.index')
@@ -52,8 +56,8 @@ class PaymentController extends Controller
     {
         $booking = Booking::find($request->get('booking_id'));
 
-        if($booking) {
-            return redirect()->to('/payment/'.$request->get('booking_id').'/edit');
+        if ($booking) {
+            return redirect()->to('/payment/' . $request->get('booking_id') . '/edit');
         }
 
         return redirect()->to(URL::previous())
@@ -73,7 +77,7 @@ class PaymentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -84,14 +88,14 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request, $id)
     {
-        $booking = Booking::with('reminder', 'tripdate', 'payment', 'trip', 'customer_booking.customers', 'customer_booking.price.date')->find($id);
+        $booking = Booking::with('todo', 'reminder', 'tripdate', 'payment', 'trip', 'customer_booking.customers', 'customer_booking.price.date')->find($id);
 
-        if($request->ajax()) {
+        if ($request->ajax()) {
             return response()->json($booking);
         }
 
@@ -102,7 +106,7 @@ class PaymentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -114,8 +118,8 @@ class PaymentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -133,10 +137,11 @@ class PaymentController extends Controller
         return response()->json(['status' => 'ok']);
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

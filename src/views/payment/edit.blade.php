@@ -50,12 +50,13 @@
 
             </div>
             <div class="col-md-6">
-                {{--
+
                 @include('booking::include.payment_customer')
-                --}}
-                {{--
+
+                @include('booking::include.payment_todo')
+
                 @include('booking::include.payment_history')
-                --}}
+
             </div>
         </div>
     </div>

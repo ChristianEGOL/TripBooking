@@ -17,4 +17,9 @@ class Booking extends \App\Booking
         return $this->hasMany('EGOL\ReisenLizenzPayment\PaymentReminder');
     }
 
+    public function todo()
+    {
+        return $this->hasMany('EGOL\ReisenLizenzPayment\PaymentTodo');
+    }
+
 }

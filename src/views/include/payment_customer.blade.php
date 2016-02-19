@@ -6,7 +6,7 @@
         <table class="table table-hover table-striped">
             <tr>
                 <th><i class="fa fa-user"></i></th>
-                <th><i class="fa fa-plane"></i></th>
+                <th><i class="fa fa-bed"></i></th>
                 <th><i class="fa fa-euro pull-right"></i></th>
                 <th><span class="pull-right">Bezahlt</span></th>
             </tr>
@@ -14,8 +14,8 @@
                 <td>
                     @{{ cbooking.customers.firstname }} @{{ cbooking.customers.firstname }}
                 </td>
-                <td>@{{ cbooking.price.date.start_date }}</td>
-                <td><span class="pull-right">@{{ cbooking.price.accommodation }} / @{{ cbooking.price.price }} €</span></td>
+                <td>@{{ cbooking.price.accommodation }}</td>
+                <td><span class="pull-right">@{{ cbooking.price.price }} €</span></td>
                 <td v-if="!cbooking.payed"><span class="pull-right"><input type="checkbox" name="" id="" @click="customerPay(booking, cbooking)"></span></td>
                 <td v-if="cbooking.payed"><span class="pull-right label label-success">Bezahlt</span></td>
             </tr>

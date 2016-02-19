@@ -30,7 +30,7 @@
                 <th><span class="pull-right">Eingang</span></th>
                 <th></th>
             </tr>
-            <tr transition="fade" v-for="payment in booking.payment | visible">
+            <tr transition="fade" v-for="payment in booking.payment">
                 <td nowrap><span class="pull-right">@{{ payment.value | euro }}</span></td>
                 <td>@{{ payment.description }}</td>
                 <td><span class="pull-right">@{{ payment.created_at | de_date }}</span></td>

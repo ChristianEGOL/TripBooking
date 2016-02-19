@@ -53,7 +53,7 @@
                         <th>Details</th>
                         <th></th>
                     </tr>
-                    <tr v-for="reminder in booking.reminder | visible | orderBy 'send_at'">
+                    <tr transition="fade" v-for="reminder in booking.reminder | orderBy 'send_at'">
                         <td>
                             <span v-if="shipment(reminder)" class="label label-success ">Versendet</span>
                             <p class="text-lowercase">@{{ reminder.email }}
@@ -66,11 +66,11 @@
                             </p>
                         </td>
                         <td>
-                            <i @click="removeReminder(reminder)" class="fa fa-remove text-danger pull-right"></i>
+                            <i @click="removeReminder(reminder)" class="fa fa-remove text-danger pull-right clickable"></i>
                         </td>
                     </tr>
                 </table>
-                <hr>
+                <div v-if="!booking.reminder.length" class="alert alert-info">Keine Erinnerungen vorhanden.</div>
             </div>
         </div>
     </div>
