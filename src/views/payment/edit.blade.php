@@ -3,11 +3,6 @@
 @section('content')
     <div id="payment">
         <input type="hidden" name="id" id="booking_id" value="{{ $id }}">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>Buchungen</h4>
-            </div>
-        </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
@@ -40,7 +35,10 @@
                                     <label for="comment_"@{{ booking.id }}>Kommentar</label>
                                     <textarea v-model="booking.comment" rows="10" id="comment_@{{ booking.id }}" class="form-control"></textarea>
                                 </div>
-                                <button class="btn btn-primary" @click="updateComment">Kommentar speichern</button>
+                                <buttonblink
+                                    button-text="Speichern"
+                                >
+                                </buttonblink>
                             </div>
                         </div>
                     </div>
