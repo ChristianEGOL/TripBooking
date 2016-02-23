@@ -48,11 +48,8 @@
                     </div>
                 </form>
                 <hr>
+                <h4>Bestehende Erinnerungen</h4>
                 <table class="table table-hover table-striped">
-                    <tr>
-                        <th>Details</th>
-                        <th></th>
-                    </tr>
                     <tr transition="fade" v-for="reminder in booking.reminder | orderBy 'send_at'">
                         <td>
                             <span v-if="shipment(reminder)" class="label label-success ">Versendet</span>
