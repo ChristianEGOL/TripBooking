@@ -28,6 +28,10 @@
                             <br>
                             Gesamtwert: @{{ totalValue() | euro }}
                             <small>Bezahlt @{{ paymentSum() | euro }}</small>
+                            <br>
+                            Vertriebspartner: @{{ booking.trip.reseller.name }}
+                            <small>Provision: @{{ provision | euro }}</small>
+                            <small>Zahlungsfrist: @{{ termOfPayment }} Tage</small>
                         </blockquote>
                         <div class="row">
                             <div class="col-md-12">

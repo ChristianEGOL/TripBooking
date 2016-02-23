@@ -93,7 +93,7 @@ class PaymentController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $booking = Booking::with('todo', 'reminder', 'tripdate', 'payment', 'trip', 'customer_booking.customers', 'customer_booking.price.date')->find($id);
+        $booking = Booking::with('todo', 'reminder', 'tripdate', 'payment', 'trip.reseller', 'customer_booking.customers', 'customer_booking.price.date')->find($id);
 
         if ($request->ajax()) {
             return response()->json($booking);
