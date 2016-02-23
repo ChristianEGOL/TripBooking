@@ -30,6 +30,7 @@
                             <small>Bezahlt @{{ paymentSum() | euro }}</small>
                             <br>
                             Vertriebspartner: @{{ booking.trip.reseller.name }}
+                            <button class="btn btn-default btn-xs" @click="createResellerTodo()">Todo erstellen</button>
                             <small>Provision: @{{ provision | euro }}</small>
                             <small>Zahlungsfrist: @{{ termOfPayment }} Tage</small>
                         </blockquote>
