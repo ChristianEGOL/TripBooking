@@ -15,16 +15,19 @@
                         </h4>
                     </div>
                     <div class="panel-body">
-                        <small>Buchungsnummer: @{{ booking.id }}</small>
                         <h4>
                             @{{ header }}
+                            <br>
+                            <small>Reise ID: @{{ booking.trip.id }}</small>
+                            <br>
+                            <small>Buchungsnummer: @{{ booking.id }}</small>
                         </h4>
                         <blockquote>
-                            Gebucht am: @{{ booking.created_at }}
-                            <small>@{{ bookingDiff() }}</small>
+                            Gebucht am: @{{ booking.created_at | de_date }}
+                            <small>@{{ booking.created_at | datediff_to_string }}</small>
                             <br>
-                            Reiseantritt: @{{ beginning }}
-                            <small>@{{ tripDiff() }}</small>
+                            Reiseantritt: @{{ beginning | de_date }}
+                            <small>@{{ booking.tripdate.start_date | datediff_to_string }}</small>
                             <br>
                             Gesamtwert: @{{ totalValue() | euro }}
                             <small>Bezahlt @{{ paymentSum() | euro }}</small>

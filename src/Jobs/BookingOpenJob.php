@@ -33,8 +33,11 @@ class BookingOpenJob extends Job implements SelfHandling
         return $this->bookings->filter(function($booking) {
             $value = 0;
             $payed = 0;
+
             foreach($booking->customer_booking as $customer) {
-                $value += $customer->price->price;
+                if($customer->price) {
+                    $value += $customer->price->price;                    
+                }
             }
 
             foreach($booking->payment as $payment) {
