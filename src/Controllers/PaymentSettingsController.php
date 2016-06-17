@@ -2,8 +2,9 @@
 
 namespace EGOL\ReisenLizenzPayment\Controllers;
 
-use Illuminate\Http\Request;
 
+use EGOL\ReisenLizenzPayment\PaymentDefaultReminder;
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +18,8 @@ class PaymentSettingsController extends Controller
 
     public function index()
     {
-        return view('booking::payment.settings');
+        $reminders = PaymentDefaultReminder::all();
+        return view('booking::payment.settings', compact('reminders'));
     }
 
     /**

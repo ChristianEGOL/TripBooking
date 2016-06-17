@@ -48,7 +48,7 @@
                     </div>
                 </form>
                 <hr>
-                <h4>Bestehende Erinnerungen</h4>
+                <h4>Bestehende Erinnerungen <button class="btn btn-default btn-xs" @click="importReminder()">Erinnerungen importieren</button></h4>
                 <table class="table table-hover table-striped">
                     <tr transition="fade" v-for="reminder in booking.reminder | orderBy 'send_at'">
                         <td>

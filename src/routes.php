@@ -14,6 +14,8 @@ Route::group(['prefix' => '/payment', 'middleware' => 'auth'], function() {
     Route::resource('{id}/reminder', '\EGOL\ReisenLizenzPayment\Controllers\PaymentReminderController');
     Route::resource('settings/todo', '\EGOL\ReisenLizenzPayment\Controllers\PaymentDefaultTodoController');
     Route::resource('{id}/todo', '\EGOL\ReisenLizenzPayment\Controllers\PaymentTodoController');
+    Route::resource('reminder', '\EGOL\ReisenLizenzPayment\Controllers\PaymentDefaultReminderController');
+
 });
 
 Route::resource('payment', '\EGOL\ReisenLizenzPayment\Controllers\PaymentController');
