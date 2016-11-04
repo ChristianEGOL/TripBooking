@@ -8,9 +8,6 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>
-                            <span v-if="isBooking">Buchung</span><span v-if="!isBooking">Anfrage</span>
-                            <span v-if="payStatus" class="label label-success">Bezahlt</span>
-                            <span v-if="!payStatus" class="label label-warning">Austehend</span>
                             <button v-if="!isBooking" class="btn btn-xs btn-default pull-right" @click="transformToBooking">zur Buchung machen</span>
                         </h4>
                     </div>
