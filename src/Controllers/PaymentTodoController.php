@@ -2,17 +2,16 @@
 
 namespace EGOL\ReisenLizenzPayment\Controllers;
 
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use EGOL\ReisenLizenzPayment\PaymentTodo;
 use EGOL\ReisenLizenzPayment\Requests\CreateTodoRequest;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class PaymentTodoController extends Controller
 {
     /**
-     * @param Request $request
+     * @param CreateTodoRequest|Request $request
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */

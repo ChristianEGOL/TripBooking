@@ -18,7 +18,7 @@
                 <div class="input-group">
                     <input class="form-control" v-model="payment.value" name="payment" id="payment" type="text">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-primary" @click="newPayment(booking, payment.value, payment.description)">Speichern</button>
+                                    <button class="btn btn-primary" @click="addToDoPayment(booking, payment.value, payment.description)">Speichern</button>
                                 </span>
                 </div>
             </div>
@@ -31,13 +31,13 @@
                 <th></th>
             </tr>
             <tr transition="fade" v-for="payment in booking.payment">
-                <td nowrap><span class="pull-right">@{{ payment.value | euro }}</span></td>
+                <td nowrap><span class="pull-right">@{{ payment.value | euro }} &euro;</span></td>
                 <td>@{{ payment.description }}</td>
                 <td><span class="pull-right">@{{ payment.created_at | de_date }}</span></td>
                 <td><span class="pull-right text-danger clickable" @click="removePayment(booking, payment)"><i class="fa fa-remove"></i></span></td>
             </tr>
             <tr>
-                <td><span class="pull-right">@{{ paymentSum(booking.payment) | euro }}</span></td>
+                <td><span class="pull-right">@{{ paymentSum(booking.payment) | euro }} &euro;</span></td>
                 <td colspan="2"><span class="pull-right"><strong>Gesamt</strong></span></td>
                 <td></td>
             </tr>

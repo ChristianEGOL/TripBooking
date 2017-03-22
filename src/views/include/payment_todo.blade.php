@@ -23,6 +23,7 @@
                 <input type="checkbox" @click="patchTodo(todo)" v-model="todo.done" name="todo[@{{ todo.id }}" id="todo_@{{ todo.id }}">
                 <label for="todo_@{{ todo.id }}">@{{ todo.name }}</label>
                 <i class="text-danger fa fa-remove pull-right clickable" @click="removeTodo(todo)"></i>
+                <i class="fa fa-clock-o pull-right" data-toggle="tooltip" data-placement="top" title="Erstellt: @{{ todo.created_at | de_date 'true' }} Update: @{{ todo.updated_at | de_date 'true' }}"></i>
             </li>
         </ul>
         <div v-if="!booking.todo.length" class="alert alert-info">Keine Todos vorhanden.</div>

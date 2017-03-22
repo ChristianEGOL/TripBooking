@@ -15,7 +15,7 @@
                     @{{ cbooking.customers.firstname }} @{{ cbooking.customers.lastname }}
                 </td>
                 <td>@{{ cbooking.price.accommodation }}</td>
-                <td><span class="pull-right">@{{ cbooking.price.price }} €</span></td>
+                <td><span class="pull-right">@{{ cbooking.price.price | euro }}</span></td>
                 <td v-if="!cbooking.payed"><span class="pull-right"><input type="checkbox" @click="customerPay(booking, cbooking)"></span></td>
                 <td v-if="cbooking.payed"><span class="pull-right label label-success">Bezahlt</span></td>
             </tr>

@@ -1,5 +1,4 @@
 <?php
-
 Route::get('/cron/reminder', '\EGOL\ReisenLizenzPayment\Controllers\PaymentReminderController@cronjob');
 
 Route::group(['prefix' => '/payment', 'middleware' => 'auth'], function() {
@@ -15,9 +14,6 @@ Route::group(['prefix' => '/payment', 'middleware' => 'auth'], function() {
     Route::resource('settings/todo', '\EGOL\ReisenLizenzPayment\Controllers\PaymentDefaultTodoController');
     Route::resource('{id}/todo', '\EGOL\ReisenLizenzPayment\Controllers\PaymentTodoController');
     Route::resource('reminder', '\EGOL\ReisenLizenzPayment\Controllers\PaymentDefaultReminderController');
-
 });
 
 Route::resource('payment', '\EGOL\ReisenLizenzPayment\Controllers\PaymentController');
-
-
